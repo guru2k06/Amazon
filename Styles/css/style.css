@@ -1,0 +1,19 @@
+.content-div{
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+}
+
+.product-card{
+    display: grid;
+    grid-template-rows: 75% 1fr;
+    height: 400px;
+    row-gap: 7px;
+}
+
+.product-img{
+    width: 100%;
+}
+
+.product-description{
+    margin-left: 10vh;
+}

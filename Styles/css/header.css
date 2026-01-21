@@ -1,7 +1,7 @@
 .header-div{
     display: flex;
     width: 100%;
-    height: 60px;
+    height: 7vh;
     background-color: antiquewhite;
     justify-content: space-between;
     align-items: center;
@@ -10,7 +10,6 @@
 .logo-name-img-div{
     display: flex;
     height: 100%;
-    width: 20vw;
     align-items: center;
 }
 
@@ -29,6 +28,7 @@
 
 .search-text{
     height: 3vh;
+    width: 350px;
 }
 
 .search-button{
@@ -49,11 +49,11 @@
 }
 
 .return-text{
-
+    font-weight: bold;
 }
 
 .orders-text{
-    font-size: medium;
+    font-size: larger;
     font-weight: bolder;
 }
 
