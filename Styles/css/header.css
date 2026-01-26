@@ -24,6 +24,12 @@
     gap: 8px;
 }
 
+.search-icon{
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
 .search-text{
     height: 36px;
     width: clamp(180px, 40vw, 400px);
