@@ -8,7 +8,6 @@ function addItemCount(){
     return cartCount
 }
 
-
 function removeItemCount(){
     cartCount -= 1
     if (cartCount < 0) cartCount = 0
