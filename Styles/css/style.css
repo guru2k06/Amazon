@@ -43,7 +43,13 @@
     padding: 10px;
 }
 
-.remove-button{
+.add-rem-div{
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.add-item-btn{
     cursor: pointer;
     padding: 7px 15px;
     background-color: rgb(187, 187, 187);
@@ -53,6 +59,23 @@
     font-weight: 500;
 }
 
+
+.remove-button{
+    cursor: pointer;
+    padding: 7px 15px;
+    background-color: rgb(255, 0, 0);
+    border-radius: 7px;
+    color: #220000;
+    font-size: 14px;
+    font-weight: 500;
+}
+
 .remove-button:hover{
     background-color: rgb(117, 117, 117);
+}
+
+.remove-img{
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
 }
