@@ -5,8 +5,6 @@
     min-height: 60px;
     padding: 8px 16px;
     background-color: antiquewhite;
-    flex-wrap: wrap;
-    gap: 12px;
 }
 
 .logo-name-img-div{
@@ -16,8 +14,8 @@
 }
 
 .logo-name-img{
-    max-width: 150px;
-    height: 40px;
+    max-width: 300px;
+    height: 60px;
     object-fit: contain;
 }
 
@@ -26,7 +24,7 @@
     align-items: center;
     gap: 8px;
     flex: 1;
-    min-width: 200px;
+    min-width: 150px;
     max-width: 500px;
 }
 
