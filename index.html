@@ -13,30 +13,56 @@
 </head>
 <body>
     <div class="container">
-        <div class="header-div">
-            <div class="logo-name-img-div">
-                <img class ="logo-name-img" src="Styles/Images/amazon-name-logo.svg" alt="">
+        <header class="header-div">
+            <div class="header-top">
+                <div class="logo-name-img-div">
+                    <img class="logo-name-img" src="Styles/Images/amazon-name-logo.svg" alt="Logo">
+                </div>
+
+                <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+                    <span class="hamburger-bar"></span>
+                    <span class="hamburger-bar"></span>
+                    <span class="hamburger-bar"></span>
+                </button>
+
+                <div class="search-div">
+                    <input class="search-text" type="text" placeholder="Search products, brands and more">
+                    <button class="search-button"><img class="search-icon" src="Styles/Images/search-icon.svg" alt="Search"></button>
+                </div>
+
+                <div class="right-section">
+                    <div class="text-div">
+                        <span class="return-text">Return</span><br>
+                        <span class="orders-text">& Orders</span>
+                    </div>
+                    <div>
+                        <a class="cart-link" href="#">
+                        <div class="cart-img-div"><img class="cart-img" src="Styles/Images/shopping-cart.svg" alt="Cart">
+                            <div class="cart-count">3</div></div>
+                    </a>
+                    </div>
+                </div>
             </div>
 
-            <div class="search-div">
-                <input class="search-text" type="text">
-                <button class="search-button"><img class="search-icon" src="Styles/Images/search-icon.svg" alt=""></button>
+            <nav class="mobile-nav" aria-hidden="true">
+                <a href="#">Home</a>
+                <a href="#">Deals</a>
+                <a href="#">Orders</a>
+                <a href="#">Cart</a>
+                <a href="#">Help</a>
+            </nav>
+        </header>
+
+        <!-- Hero -->
+        <section class="hero-section">
+            <div class="hero-inner">
+                <h1>Shop Smart, Shop Everything Online</h1>
+                <p>Discover millions of products with fast delivery, secure payments, and amazing deals all in one place.</p>
+                <a class="cta-btn" href="#">Start Shopping</a>
             </div>
+        </section>
 
-            <div class="right-section">
-                <div class="text-div">
-                    <span class="return-text">Return</span><br>
-                    <span class="orders-text">& Orders</span>
-                </div>
-                <div>
-                    <a class="cart-link" href="">
-                    <div class="cart-img-div"><img class="cart-img" src="Styles/Images/shopping-cart.svg" alt="">
-                        <div class="cart-count">3</div></div>
-                </a> 
-                </div>
-            </div>                
-        </div>
-
+        <main>
         <div class="content-div">
             <div class="product-card">
                 <div class="product-img-div">
@@ -60,8 +86,8 @@
                     <span class="product-title">Product Title Example</span><br>
                     <span class="product-price">$29.99</span><br>
                     <div class="add-rem-div">
-                        <button class="add-item-btn">Add to Cart</button>
-                        <button class="remove-item-btn"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
+                        <button class="add-item-btn" onclick="addItemCount()">Add to Cart</button>
+                        <button class="remove-item-btn" onclick="removeItemCount()"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
                     </div>
                     
                 </div>
@@ -74,8 +100,8 @@
                     <span class="product-title">Product Title Example</span><br>
                     <span class="product-price">$29.99</span><br>
                     <div class="add-rem-div">
-                        <button class="add-item-btn">Add to Cart</button>
-                        <button class="remove-item-btn"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
+                        <button class="add-item-btn" onclick="addItemCount()">Add to Cart</button>
+                        <button class="remove-item-btn" onclick="removeItemCount()"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
                     </div>
                     
                 </div>
@@ -88,8 +114,8 @@
                     <span class="product-title">Product Title Example</span><br>
                     <span class="product-price">$29.99</span><br>
                     <div class="add-rem-div">
-                        <button class="add-item-btn">Add to Cart</button>
-                        <button class="remove-item-btn"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
+                        <button class="add-item-btn" onclick="addItemCount()">Add to Cart</button>
+                        <button class="remove-item-btn" onclick="removeItemCount()"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
                     </div>
                     
                 </div>
@@ -102,8 +128,8 @@
                     <span class="product-title">Product Title Example</span><br>
                     <span class="product-price">$29.99</span><br>
                     <div class="add-rem-div">
-                        <button class="add-item-btn">Add to Cart</button>
-                        <button class="remove-item-btn"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
+                        <button class="add-item-btn" onclick="addItemCount()">Add to Cart</button>
+                        <button class="remove-item-btn" onclick="removeItemCount()"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
                     </div>
                     
                 </div>
@@ -116,8 +142,8 @@
                     <span class="product-title">Product Title Example</span><br>
                     <span class="product-price">$29.99</span><br>
                     <div class="add-rem-div">
-                        <button class="add-item-btn">Add to Cart</button>
-                        <button class="remove-item-btn"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
+                        <button class="add-item-btn" onclick="addItemCount()">Add to Cart</button>
+                        <button class="remove-item-btn" onclick="removeItemCount()"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
                     </div>
                     
                 </div>
@@ -130,8 +156,8 @@
                     <span class="product-title">Product Title Example</span><br>
                     <span class="product-price">$29.99</span><br>
                     <div class="add-rem-div">
-                        <button class="add-item-btn">Add to Cart</button>
-                        <button class="remove-item-btn"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
+                        <button class="add-item-btn" onclick="addItemCount()">Add to Cart</button>
+                        <button class="remove-item-btn" onclick="removeItemCount()"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
                     </div>
                     
                 </div>
@@ -144,8 +170,8 @@
                     <span class="product-title">Product Title Example</span><br>
                     <span class="product-price">$29.99</span><br>
                     <div class="add-rem-div">
-                        <button class="add-item-btn">Add to Cart</button>
-                        <button class="remove-item-btn"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
+                        <button class="add-item-btn" onclick="addItemCount()">Add to Cart</button>
+                        <button class="remove-item-btn" onclick="removeItemCount()"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
                     </div>
                     
                 </div>
@@ -158,8 +184,8 @@
                     <span class="product-title">Product Title Example</span><br>
                     <span class="product-price">$29.99</span><br>
                     <div class="add-rem-div">
-                        <button class="add-item-btn">Add to Cart</button>
-                        <button class="remove-item-btn"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
+                        <button class="add-item-btn" onclick="addItemCount()">Add to Cart</button>
+                        <button class="remove-item-btn" onclick="removeItemCount()"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
                     </div>
                     
                 </div>
@@ -172,8 +198,8 @@
                     <span class="product-title">Product Title Example</span><br>
                     <span class="product-price">$29.99</span><br>
                     <div class="add-rem-div">
-                        <button class="add-item-btn">Add to Cart</button>
-                        <button class="remove-item-btn"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
+                        <button class="add-item-btn" onclick="addItemCount()">Add to Cart</button>
+                        <button class="remove-item-btn" onclick="removeItemCount()"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
                     </div>
                     
                 </div>
@@ -186,8 +212,8 @@
                     <span class="product-title">Product Title Example</span><br>
                     <span class="product-price">$29.99</span><br>
                     <div class="add-rem-div">
-                        <button class="add-item-btn">Add to Cart</button>
-                        <button class="remove-item-btn"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
+                        <button class="add-item-btn" onclick="addItemCount()">Add to Cart</button>
+                        <button class="remove-item-btn" onclick="removeItemCount()"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
                     </div>
                     
                 </div>
@@ -200,8 +226,8 @@
                     <span class="product-title">Product Title Example</span><br>
                     <span class="product-price">$29.99</span><br>
                     <div class="add-rem-div">
-                        <button class="add-item-btn">Add to Cart</button>
-                        <button class="remove-item-btn"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
+                        <button class="add-item-btn" onclick="addItemCount()">Add to Cart</button>
+                        <button class="remove-item-btn" onclick="removeItemCount()"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
                     </div>
                     
                 </div>
@@ -213,9 +239,9 @@
                 <div class="product-description">
                     <span class="product-title">Product Title Example</span><br>
                     <span class="product-price">$29.99</span><br>
-                    <div class="add-rem-div">
-                        <button class="add-item-btn">Add to Cart</button>
-                        <button class="remove-item-btn"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
+                   <div class="add-rem-div">
+                        <button class="add-item-btn" onclick="addItemCount()">Add to Cart</button>
+                        <button class="remove-item-btn" onclick="removeItemCount()"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
                     </div>
                     
                 </div>
@@ -228,8 +254,8 @@
                     <span class="product-title">Product Title Example</span><br>
                     <span class="product-price">$29.99</span><br>
                     <div class="add-rem-div">
-                        <button class="add-item-btn">Add to Cart</button>
-                        <button class="remove-item-btn"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
+                        <button class="add-item-btn" onclick="addItemCount()">Add to Cart</button>
+                        <button class="remove-item-btn" onclick="removeItemCount()"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
                     </div>
                     
                 </div>
@@ -242,14 +268,51 @@
                     <span class="product-title">Product Title Example</span><br>
                     <span class="product-price">$29.99</span><br>
                     <div class="add-rem-div">
-                        <button class="add-item-btn">Add to Cart</button>
-                        <button class="remove-item-btn"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
+                        <button class="add-item-btn" onclick="addItemCount()">Add to Cart</button>
+                        <button class="remove-item-btn" onclick="removeItemCount()"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
                     </div>
                     
                 </div>
             </div>
 
-        </div>     
+        </div>
+        </main>
+
+        <!-- Features -->
+        <section class="features">
+            <div class="features-inner">
+                <div class="feature">
+                    <h3>Fast Delivery</h3>
+                    <p>Quick and reliable delivery options for every order.</p>
+                </div>
+                <div class="feature">
+                    <h3>Secure Payments</h3>
+                    <p>Multiple secure payment options to choose from.</p>
+                </div>
+                <div class="feature">
+                    <h3>Wide Selection</h3>
+                    <p>Millions of products across categories and brands.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="site-footer">
+            <div class="footer-inner">
+                <div class="footer-col">
+                    <h4>About</h4>
+                    <p>About Us · Careers · Blog</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Help</h4>
+                    <p>Payments · Shipping · Returns</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <p>Privacy Policy · Terms</p>
+                </div>
+            </div>
+        </footer>
     </div>
 </body>
-</html
+</html>

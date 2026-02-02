@@ -1,10 +1,21 @@
+/* Header and navigation (brand colors, hamburger for mobile) */
 .header-div{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 60;
+    background-color: #0b3d91; /* dark blue primary */
+    color: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+}
+
+.header-top{
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    min-height: 60px;
-    padding: 8px 16px;
-    background-color: antiquewhite;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 10px 16px;
 }
 
 .logo-name-img-div{
@@ -14,8 +25,8 @@
 }
 
 .logo-name-img{
-    max-width: 300px;
-    height: 60px;
+    max-width: 220px;
+    height: 44px;
     object-fit: contain;
 }
 
@@ -25,7 +36,7 @@
     gap: 8px;
     flex: 1;
     min-width: 150px;
-    max-width: 500px;
+    max-width: 700px;
 }
 
 .search-icon{
@@ -39,8 +50,10 @@
     height: 36px;
     width: 100%;
     padding: 0 8px;
-    border: 1px solid #ccc;
+    border: 1px solid rgba(255,255,255,0.18);
     border-radius: 4px;
+    background: #fff;
+    color: #000;
 }
 
 .search-button{
@@ -84,7 +97,7 @@
     min-width: 20px;
     height: 20px;
     font-size: 12px;
-    background-color: black;
+    background-color: #ff9900;
     color: white;
     border-radius: 50%;
     display: flex;
@@ -92,62 +105,53 @@
     justify-content: center;
 }
 
+/* Hamburger */
+.hamburger{
+    display: none;
+    background: transparent;
+    border: none;
+    gap: 4px;
+    padding: 8px;
+    cursor: pointer;
+}
+.hamburger-bar{
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #fff;
+    margin: 3px 0;
+}
+
+.mobile-nav{
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px 16px 16px;
+    background: #0b3d91;
+}
+.mobile-nav a{
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.mobile-nav.open{display:flex}
+
 /* Mobile responsive styles */
 @media (max-width: 768px) {
-    .header-div {
-        flex-direction: column;
-        align-items: stretch;
-        padding: 8px;
-        gap: 8px;
-    }
-
-    .logo-name-img-div {
-        justify-content: center;
-    }
-
-    .search-div {
-        order: 3;
-        max-width: 100%;
-        margin-top: 4px;
-    }
-
-    .right-section {
-        justify-content: center;
-        order: 2;
-    }
+    .hamburger{display:block}
+    .logo-name-img{max-width:160px}
+    .search-div{display:none}
+    .right-section{order:2}
+    .header-top{padding:10px}
 }
 
 @media (max-width: 480px) {
-    .header-div {
-        padding: 6px;
-        gap: 6px;
-    }
-
-    .logo-name-img {
-        max-width: 120px;
-        height: 35px;
-    }
-
-    .search-text {
-        height: 32px;
-        font-size: 14px;
-    }
-
-    .search-button {
-        width: 36px;
-        height: 32px;
-    }
-
-    .text-div {
-        font-size: 11px;
-    }
-
-    .cart-img {
-        width: 24px;
-        height: 24px;
-    }
-
-    .right-section {
-        gap: 12px;
-    }
+    .header-top{padding:8px}
+    .logo-name-img{max-width:120px;height:36px}
+    .search-text{height:32px;font-size:14px}
+    .search-button{width:36px;height:32px}
+    .text-div{font-size:11px}
+    .cart-img{width:24px;height:24px}
+    .right-section{gap:12px}
 }
