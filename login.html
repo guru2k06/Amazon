@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="Styles/css/style.css">
+    <link rel="stylesheet" href="Styles/css/header.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="Script/script.js" defer></script>
+    <script src="Script/auth.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header class="header-div">
+            <div class="header-top">
+                <div class="logo-name-img-div">
+                    <a href="index.html">
+                        <img class="logo-name-img" src="Styles/Images/amazon-name-logo.svg" alt="Logo">
+                    </a>
+                </div>
+
+                <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+                    <span class="hamburger-bar"></span>
+                    <span class="hamburger-bar"></span>
+                    <span class="hamburger-bar"></span>
+                </button>
+
+                <div class="search-div">
+                    <input class="search-text" type="text" placeholder="Search products, brands and more">
+                    <button class="search-button"><img class="search-icon" src="Styles/Images/search-icon.svg" alt="Search"></button>
+                </div>
+
+                <div class="right-section">
+                    <a class="text-div" href="orders.html">
+                        <span class="return-text">Return</span><br>
+                        <span class="orders-text">& Orders</span>
+                    </a>
+                    <a class="login-link" href="login.html">Login</a>
+                    <div>
+                        <a class="cart-link" href="cart.html">
+                        <div class="cart-img-div"><img class="cart-img" src="Styles/Images/shopping-cart.svg" alt="Cart">
+                            <div class="cart-count">0</div></div>
+                    </a>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="mobile-nav" aria-hidden="true">
+                <a href="index.html">Home</a>
+                <a href="#">Deals</a>
+                <a href="orders.html">Orders</a>
+                <a href="cart.html">Cart</a>
+                <a href="checkout.html">Checkout</a>
+                <a href="login.html">Login</a>
+            </nav>
+        </header>
+
+        <main class="page-wrap">
+            <div id="auth-message" class="muted"></div>
+            <div class="auth-grid">
+                <div class="panel">
+                    <h2>Login</h2>
+                    <form id="login-form">
+                        <div class="form-row">
+                            <label for="login-email">Email</label>
+                            <input id="login-email" type="email" required>
+                        </div>
+                        <div class="form-row">
+                            <label for="login-password">Password</label>
+                            <input id="login-password" type="password" required>
+                        </div>
+                        <button class="btn-secondary" type="submit">Login</button>
+                    </form>
+                </div>
+
+                <div class="panel">
+                    <h2>Create Account</h2>
+                    <form id="register-form">
+                        <div class="form-row">
+                            <label for="register-email">Email</label>
+                            <input id="register-email" type="email" required>
+                        </div>
+                        <div class="form-row">
+                            <label for="register-password">Password</label>
+                            <input id="register-password" type="password" required>
+                        </div>
+                        <button class="btn-primary" type="submit">Create Account</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

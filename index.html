@@ -16,7 +16,9 @@
         <header class="header-div">
             <div class="header-top">
                 <div class="logo-name-img-div">
-                    <img class="logo-name-img" src="Styles/Images/amazon-name-logo.svg" alt="Logo">
+                    <a href="index.html">
+                        <img class="logo-name-img" src="Styles/Images/amazon-name-logo.svg" alt="Logo">
+                    </a>
                 </div>
 
                 <button class="hamburger" aria-label="Open menu" aria-expanded="false">
@@ -31,12 +33,13 @@
                 </div>
 
                 <div class="right-section">
-                    <div class="text-div">
+                    <a class="text-div" href="orders.html">
                         <span class="return-text">Return</span><br>
                         <span class="orders-text">& Orders</span>
-                    </div>
+                    </a>
+                    <a class="login-link" href="login.html">Login</a>
                     <div>
-                        <a class="cart-link" href="#">
+                        <a class="cart-link" href="cart.html">
                         <div class="cart-img-div"><img class="cart-img" src="Styles/Images/shopping-cart.svg" alt="Cart">
                             <div class="cart-count">3</div></div>
                     </a>
@@ -45,11 +48,12 @@
             </div>
 
             <nav class="mobile-nav" aria-hidden="true">
-                <a href="#">Home</a>
+                <a href="index.html">Home</a>
                 <a href="#">Deals</a>
-                <a href="#">Orders</a>
-                <a href="#">Cart</a>
-                <a href="#">Help</a>
+                <a href="orders.html">Orders</a>
+                <a href="cart.html">Cart</a>
+                <a href="checkout.html">Checkout</a>
+                <a href="login.html">Login</a>
             </nav>
         </header>
 
@@ -69,11 +73,11 @@
                     <img class="product-img" src="Styles/Images/product1.jpg" alt="">
                 </div>
                 <div class="product-description">
-                    <span class="product-title">Product Title Example</span><br>
-                    <span class="product-price">$29.99</span><br>
+                    <span class="product-title">Smartphone (8GB/128GB)</span><br>
+                    <span class="product-price">$49.99</span><br>
                     <div class="add-rem-div">
-                        <button class="add-item-btn" onclick="addItemCount()">Add to Cart</button>
-                        <button class="remove-item-btn" onclick="removeItemCount()"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
+                        <button class="add-item-btn" onclick="addToCartFromButton(this)">Add to Cart</button>
+                        <button class="remove-item-btn" onclick="removeFromCartFromButton(this)"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
                     </div>
                     
                 </div>
@@ -83,11 +87,11 @@
                     <img class="product-img" src="Styles/Images/product2.jpg" alt="">
                 </div>
                 <div class="product-description">
-                    <span class="product-title">Product Title Example</span><br>
-                    <span class="product-price">$29.99</span><br>
+                    <span class="product-title">Portable Party Speaker</span><br>
+                    <span class="product-price">$129.00</span><br>
                     <div class="add-rem-div">
-                        <button class="add-item-btn" onclick="addItemCount()">Add to Cart</button>
-                        <button class="remove-item-btn" onclick="removeItemCount()"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
+                        <button class="add-item-btn" onclick="addToCartFromButton(this)">Add to Cart</button>
+                        <button class="remove-item-btn" onclick="removeFromCartFromButton(this)"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
                     </div>
                     
                 </div>
@@ -97,11 +101,11 @@
                     <img class="product-img" src="Styles/Images/product3.jpg" alt="">
                 </div>
                 <div class="product-description">
-                    <span class="product-title">Product Title Example</span><br>
-                    <span class="product-price">$29.99</span><br>
+                    <span class="product-title">Women's Red Coat Dress</span><br>
+                    <span class="product-price">$299.99</span><br>
                     <div class="add-rem-div">
-                        <button class="add-item-btn" onclick="addItemCount()">Add to Cart</button>
-                        <button class="remove-item-btn" onclick="removeItemCount()"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
+                        <button class="add-item-btn" onclick="addToCartFromButton(this)">Add to Cart</button>
+                        <button class="remove-item-btn" onclick="removeFromCartFromButton(this)"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
                     </div>
                     
                 </div>
@@ -111,11 +115,11 @@
                     <img class="product-img" src="Styles/Images/product4.jpg" alt="">
                 </div>
                 <div class="product-description">
-                    <span class="product-title">Product Title Example</span><br>
-                    <span class="product-price">$29.99</span><br>
+                    <span class="product-title">LG Smart TV 43 Inch</span><br>
+                    <span class="product-price">$19.95</span><br>
                     <div class="add-rem-div">
-                        <button class="add-item-btn" onclick="addItemCount()">Add to Cart</button>
-                        <button class="remove-item-btn" onclick="removeItemCount()"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
+                        <button class="add-item-btn" onclick="addToCartFromButton(this)">Add to Cart</button>
+                        <button class="remove-item-btn" onclick="removeFromCartFromButton(this)"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
                     </div>
                     
                 </div>
@@ -125,11 +129,11 @@
                     <img class="product-img" src="Styles/Images/product5.jpg" alt="">
                 </div>
                 <div class="product-description">
-                    <span class="product-title">Product Title Example</span><br>
-                    <span class="product-price">$29.99</span><br>
+                    <span class="product-title">Plush Fleece Blanket</span><br>
+                    <span class="product-price">$59.50</span><br>
                     <div class="add-rem-div">
-                        <button class="add-item-btn" onclick="addItemCount()">Add to Cart</button>
-                        <button class="remove-item-btn" onclick="removeItemCount()"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
+                        <button class="add-item-btn" onclick="addToCartFromButton(this)">Add to Cart</button>
+                        <button class="remove-item-btn" onclick="removeFromCartFromButton(this)"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
                     </div>
                     
                 </div>
@@ -139,11 +143,11 @@
                     <img class="product-img" src="Styles/Images/product6.jpg" alt="">
                 </div>
                 <div class="product-description">
-                    <span class="product-title">Product Title Example</span><br>
-                    <span class="product-price">$29.99</span><br>
+                    <span class="product-title">Men's Casual Jacket</span><br>
+                    <span class="product-price">$34.99</span><br>
                     <div class="add-rem-div">
-                        <button class="add-item-btn" onclick="addItemCount()">Add to Cart</button>
-                        <button class="remove-item-btn" onclick="removeItemCount()"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
+                        <button class="add-item-btn" onclick="addToCartFromButton(this)">Add to Cart</button>
+                        <button class="remove-item-btn" onclick="removeFromCartFromButton(this)"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
                     </div>
                     
                 </div>
@@ -153,11 +157,11 @@
                     <img class="product-img" src="Styles/Images/product7.jpg" alt="">
                 </div>
                 <div class="product-description">
-                    <span class="product-title">Product Title Example</span><br>
-                    <span class="product-price">$29.99</span><br>
+                    <span class="product-title">Premium Mattress Topper</span><br>
+                    <span class="product-price">$89.00</span><br>
                     <div class="add-rem-div">
-                        <button class="add-item-btn" onclick="addItemCount()">Add to Cart</button>
-                        <button class="remove-item-btn" onclick="removeItemCount()"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
+                        <button class="add-item-btn" onclick="addToCartFromButton(this)">Add to Cart</button>
+                        <button class="remove-item-btn" onclick="removeFromCartFromButton(this)"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
                     </div>
                     
                 </div>
@@ -167,11 +171,11 @@
                     <img class="product-img" src="Styles/Images/product8.jpg" alt="">
                 </div>
                 <div class="product-description">
-                    <span class="product-title">Product Title Example</span><br>
-                    <span class="product-price">$29.99</span><br>
+                    <span class="product-title">Mountain Bicycle</span><br>
+                    <span class="product-price">$39.99</span><br>
                     <div class="add-rem-div">
-                        <button class="add-item-btn" onclick="addItemCount()">Add to Cart</button>
-                        <button class="remove-item-btn" onclick="removeItemCount()"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
+                        <button class="add-item-btn" onclick="addToCartFromButton(this)">Add to Cart</button>
+                        <button class="remove-item-btn" onclick="removeFromCartFromButton(this)"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
                     </div>
                     
                 </div>
@@ -181,11 +185,11 @@
                     <img class="product-img" src="Styles/Images/product9.jpg" alt="">
                 </div>
                 <div class="product-description">
-                    <span class="product-title">Product Title Example</span><br>
-                    <span class="product-price">$29.99</span><br>
+                    <span class="product-title">Smartwatch</span><br>
+                    <span class="product-price">$45.00</span><br>
                     <div class="add-rem-div">
-                        <button class="add-item-btn" onclick="addItemCount()">Add to Cart</button>
-                        <button class="remove-item-btn" onclick="removeItemCount()"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
+                        <button class="add-item-btn" onclick="addToCartFromButton(this)">Add to Cart</button>
+                        <button class="remove-item-btn" onclick="removeFromCartFromButton(this)"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
                     </div>
                     
                 </div>
@@ -195,11 +199,11 @@
                     <img class="product-img" src="Styles/Images/product10.jpg" alt="">
                 </div>
                 <div class="product-description">
-                    <span class="product-title">Product Title Example</span><br>
-                    <span class="product-price">$29.99</span><br>
+                    <span class="product-title">Nutri Blender Set</span><br>
+                    <span class="product-price">$24.99</span><br>
                     <div class="add-rem-div">
-                        <button class="add-item-btn" onclick="addItemCount()">Add to Cart</button>
-                        <button class="remove-item-btn" onclick="removeItemCount()"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
+                        <button class="add-item-btn" onclick="addToCartFromButton(this)">Add to Cart</button>
+                        <button class="remove-item-btn" onclick="removeFromCartFromButton(this)"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
                     </div>
                     
                 </div>
@@ -209,11 +213,11 @@
                     <img class="product-img" src="Styles/Images/product11.jpg" alt="">
                 </div>
                 <div class="product-description">
-                    <span class="product-title">Product Title Example</span><br>
-                    <span class="product-price">$29.99</span><br>
+                    <span class="product-title">Spin Mop Bucket Set</span><br>
+                    <span class="product-price">$79.99</span><br>
                     <div class="add-rem-div">
-                        <button class="add-item-btn" onclick="addItemCount()">Add to Cart</button>
-                        <button class="remove-item-btn" onclick="removeItemCount()"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
+                        <button class="add-item-btn" onclick="addToCartFromButton(this)">Add to Cart</button>
+                        <button class="remove-item-btn" onclick="removeFromCartFromButton(this)"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
                     </div>
                     
                 </div>
@@ -223,11 +227,11 @@
                     <img class="product-img" src="Styles/Images/product12.jpg" alt="">
                 </div>
                 <div class="product-description">
-                    <span class="product-title">Product Title Example</span><br>
-                    <span class="product-price">$29.99</span><br>
+                    <span class="product-title">Men's Jogger Pants</span><br>
+                    <span class="product-price">$27.50</span><br>
                     <div class="add-rem-div">
-                        <button class="add-item-btn" onclick="addItemCount()">Add to Cart</button>
-                        <button class="remove-item-btn" onclick="removeItemCount()"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
+                        <button class="add-item-btn" onclick="addToCartFromButton(this)">Add to Cart</button>
+                        <button class="remove-item-btn" onclick="removeFromCartFromButton(this)"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
                     </div>
                     
                 </div>
@@ -237,11 +241,11 @@
                     <img class="product-img" src="Styles/Images/product13.jpg" alt="">
                 </div>
                 <div class="product-description">
-                    <span class="product-title">Product Title Example</span><br>
-                    <span class="product-price">$29.99</span><br>
+                    <span class="product-title">Acoustic Guitar</span><br>
+                    <span class="product-price">$32.00</span><br>
                    <div class="add-rem-div">
-                        <button class="add-item-btn" onclick="addItemCount()">Add to Cart</button>
-                        <button class="remove-item-btn" onclick="removeItemCount()"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
+                        <button class="add-item-btn" onclick="addToCartFromButton(this)">Add to Cart</button>
+                        <button class="remove-item-btn" onclick="removeFromCartFromButton(this)"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
                     </div>
                     
                 </div>
@@ -251,11 +255,11 @@
                     <img class="product-img" src="Styles/Images/product14.jpg" alt="">
                 </div>
                 <div class="product-description">
-                    <span class="product-title">Product Title Example</span><br>
+                    <span class="product-title">Women's Long Coat</span><br>
                     <span class="product-price">$29.99</span><br>
                     <div class="add-rem-div">
-                        <button class="add-item-btn" onclick="addItemCount()">Add to Cart</button>
-                        <button class="remove-item-btn" onclick="removeItemCount()"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
+                        <button class="add-item-btn" onclick="addToCartFromButton(this)">Add to Cart</button>
+                        <button class="remove-item-btn" onclick="removeFromCartFromButton(this)"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
                     </div>
                     
                 </div>
@@ -265,11 +269,11 @@
                     <img class="product-img" src="Styles/Images/product14.jpg" alt="">
                 </div>
                 <div class="product-description">
-                    <span class="product-title">Product Title Example</span><br>
-                    <span class="product-price">$29.99</span><br>
+                    <span class="product-title">Women's Winter Coat</span><br>
+                    <span class="product-price">$22.99</span><br>
                     <div class="add-rem-div">
-                        <button class="add-item-btn" onclick="addItemCount()">Add to Cart</button>
-                        <button class="remove-item-btn" onclick="removeItemCount()"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
+                        <button class="add-item-btn" onclick="addToCartFromButton(this)">Add to Cart</button>
+                        <button class="remove-item-btn" onclick="removeFromCartFromButton(this)"><img src="Styles/Images/garbage-bin-10420.svg" alt="" class="remove-img"></button>
                     </div>
                     
                 </div>
@@ -301,15 +305,15 @@
             <div class="footer-inner">
                 <div class="footer-col">
                     <h4>About</h4>
-                    <p>About Us · Careers · Blog</p>
+                    <p>About Us | Careers | Blog</p>
                 </div>
                 <div class="footer-col">
                     <h4>Help</h4>
-                    <p>Payments · Shipping · Returns</p>
+                    <p>Payments | Shipping | Returns</p>
                 </div>
                 <div class="footer-col">
                     <h4>Legal</h4>
-                    <p>Privacy Policy · Terms</p>
+                    <p>Privacy Policy | Terms</p>
                 </div>
             </div>
         </footer>

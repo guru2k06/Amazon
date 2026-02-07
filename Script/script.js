@@ -1,24 +1,61 @@
-let cartCount = 0
+const CART_KEY = 'amazon_cart'
 
-function addItemCount(){
-    cartCount += 1
-    const cartElem = document.querySelector('.cart-count')
-    if (cartElem) cartElem.textContent = cartCount
-    return cartCount
+function getCartItems(){
+    try{
+        const raw = localStorage.getItem(CART_KEY)
+        return raw ? JSON.parse(raw) : []
+    }catch{
+        return []
+    }
 }
 
-function removeItemCount(){
-    cartCount -= 1
-    if (cartCount < 0) cartCount = 0
+function setCartItems(items){
+    localStorage.setItem(CART_KEY, JSON.stringify(items))
+}
+
+function updateCartCount(){
     const cartElem = document.querySelector('.cart-count')
-    if (cartElem) cartElem.textContent = cartCount
-    return cartCount
+    if (!cartElem) return
+    const items = getCartItems()
+    const count = items.reduce((sum, item)=> sum + (item.qty || 0), 0)
+    cartElem.textContent = count
+}
+
+function addToCartFromButton(button){
+    const card = button.closest('.product-card')
+    if (!card) return
+    const title = card.querySelector('.product-title')?.textContent?.trim() || 'Item'
+    const priceText = card.querySelector('.product-price')?.textContent || '$0'
+    const price = parseFloat(priceText.replace(/[^0-9.]/g,'')) || 0
+    const img = card.querySelector('.product-img')?.getAttribute('src') || ''
+
+    const items = getCartItems()
+    const existing = items.find(item => item.title === title)
+    if (existing){
+        existing.qty += 1
+    } else {
+        items.push({ title, price, img, qty: 1 })
+    }
+    setCartItems(items)
+    updateCartCount()
+}
+
+function removeFromCartFromButton(button){
+    const card = button.closest('.product-card')
+    if (!card) return
+    const title = card.querySelector('.product-title')?.textContent?.trim() || 'Item'
+    const items = getCartItems()
+    const idx = items.findIndex(item => item.title === title)
+    if (idx >= 0){
+        items[idx].qty -= 1
+        if (items[idx].qty <= 0) items.splice(idx, 1)
+        setCartItems(items)
+        updateCartCount()
+    }
 }
 
 document.addEventListener('DOMContentLoaded', ()=>{
-    // initialize cart count from DOM if present
-    const cartElem = document.querySelector('.cart-count')
-    if (cartElem) cartCount = parseInt(cartElem.textContent,10) || 0
+    updateCartCount()
 
     // hamburger toggle
     const hamburger = document.querySelector('.hamburger')
