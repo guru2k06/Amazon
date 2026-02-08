@@ -49,8 +49,11 @@ db.serialize(() => {
     'CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT UNIQUE, password_hash TEXT)'
   )
   db.run(
-    'CREATE TABLE IF NOT EXISTS orders (id INTEGER PRIMARY KEY AUTOINCREMENT, user_id INTEGER, items_json TEXT, total REAL, created_at TEXT)'
+    'CREATE TABLE IF NOT EXISTS orders (id INTEGER PRIMARY KEY AUTOINCREMENT, user_id INTEGER, items_json TEXT, total REAL, created_at TEXT, address_json TEXT, payment_method TEXT)'
   )
+
+  db.run('ALTER TABLE orders ADD COLUMN address_json TEXT', () => {})
+  db.run('ALTER TABLE orders ADD COLUMN payment_method TEXT', () => {})
 })
 
 function requireAuth(req, res, next) {
@@ -124,12 +127,14 @@ app.post('/api/orders', requireAuth, async (req, res) => {
   try {
     const items = Array.isArray(req.body.items) ? req.body.items : []
     const total = Number(req.body.total || 0)
+    const address = req.body.address || {}
+    const paymentMethod = req.body.paymentMethod || 'cod'
     if (!items.length) return res.status(400).json({ error: 'Cart is empty' })
 
     const createdAt = new Date().toISOString()
     await run(
-      'INSERT INTO orders (user_id, items_json, total, created_at) VALUES (?, ?, ?, ?)',
-      [req.session.userId, JSON.stringify(items), total, createdAt]
+      'INSERT INTO orders (user_id, items_json, total, created_at, address_json, payment_method) VALUES (?, ?, ?, ?, ?, ?)',
+      [req.session.userId, JSON.stringify(items), total, createdAt, JSON.stringify(address), paymentMethod]
     )
     res.json({ ok: true })
   } catch (err) {

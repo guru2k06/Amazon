@@ -96,6 +96,12 @@ function renderCheckoutPage() {
 async function initCheckout() {
   const statusEl = document.getElementById('checkout-status')
   const placeBtn = document.getElementById('place-order-btn')
+  const nameEl = document.getElementById('address-name')
+  const phoneEl = document.getElementById('address-phone')
+  const line1El = document.getElementById('address-line1')
+  const cityEl = document.getElementById('address-city')
+  const stateEl = document.getElementById('address-state')
+  const zipEl = document.getElementById('address-zip')
   if (!statusEl || !placeBtn) return
 
   const me = await fetch('/api/me').then(r => r.json()).catch(() => ({ loggedIn: false }))
@@ -113,10 +119,26 @@ async function initCheckout() {
       return
     }
 
+    const address = {
+      name: nameEl?.value.trim(),
+      phone: phoneEl?.value.trim(),
+      line1: line1El?.value.trim(),
+      city: cityEl?.value.trim(),
+      state: stateEl?.value.trim(),
+      zip: zipEl?.value.trim()
+    }
+
+    if (!address.name || !address.phone || !address.line1 || !address.city || !address.state || !address.zip) {
+      statusEl.textContent = 'Please fill in all delivery address fields.'
+      return
+    }
+
+    const paymentMethod = document.querySelector('input[name="payment-method"]:checked')?.value || 'cod'
+
     const res = await fetch('/api/orders', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ items, total })
+      body: JSON.stringify({ items, total, address, paymentMethod })
     })
     if (!res.ok) {
       statusEl.textContent = 'Failed to place order.'

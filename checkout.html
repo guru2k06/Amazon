@@ -63,6 +63,43 @@
             <div id="checkout-status" class="muted"></div>
             <div class="cart-grid">
                 <div class="panel">
+                    <h3>Delivery Address</h3>
+                    <div class="form-row">
+                        <label for="address-name">Full Name</label>
+                        <input id="address-name" type="text" placeholder="Enter full name" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="address-phone">Phone Number</label>
+                        <input id="address-phone" type="tel" placeholder="Enter phone number" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="address-line1">Address Line</label>
+                        <input id="address-line1" type="text" placeholder="House no, street, area" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="address-city">City</label>
+                        <input id="address-city" type="text" placeholder="City" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="address-state">State</label>
+                        <input id="address-state" type="text" placeholder="State" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="address-zip">PIN Code</label>
+                        <input id="address-zip" type="text" placeholder="PIN code" required>
+                    </div>
+
+                    <h3>Payment Method</h3>
+                    <div class="form-row">
+                        <label>
+                            <input type="radio" name="payment-method" value="cod" checked>
+                            Cash on Delivery (COD)
+                        </label>
+                        <label>
+                            <input type="radio" name="payment-method" value="card">
+                            Card / UPI
+                        </label>
+                    </div>
                     <div id="checkout-items"></div>
                 </div>
                 <div class="cart-summary">
