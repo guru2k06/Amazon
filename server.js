@@ -1,10 +1,18 @@
 const path = require('path')
 const express = require('express')
 const session = require('express-session')
-const sqlite3 = require('sqlite3').verbose()
+const { Pool } = require('pg')
 
 const app = express()
-const db = new sqlite3.Database(path.join(__dirname, 'data.sqlite'))
+if (!process.env.DATABASE_URL) {
+  console.error('Missing DATABASE_URL. Set it in your environment (Render -> Environment).')
+  process.exit(1)
+}
+
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false
+})
 const PORT = process.env.PORT || 3000
 
 app.use(express.json())
@@ -18,43 +26,25 @@ app.use(session({
 app.use(express.static(__dirname))
 
 function run(sql, params = []) {
-  return new Promise((resolve, reject) => {
-    db.run(sql, params, function (err) {
-      if (err) return reject(err)
-      resolve(this)
-    })
-  })
+  return pool.query(sql, params)
 }
 
 function get(sql, params = []) {
-  return new Promise((resolve, reject) => {
-    db.get(sql, params, (err, row) => {
-      if (err) return reject(err)
-      resolve(row)
-    })
-  })
+  return pool.query(sql, params).then(result => result.rows[0] || null)
 }
 
 function all(sql, params = []) {
-  return new Promise((resolve, reject) => {
-    db.all(sql, params, (err, rows) => {
-      if (err) return reject(err)
-      resolve(rows)
-    })
-  })
+  return pool.query(sql, params).then(result => result.rows)
 }
 
-db.serialize(() => {
-  db.run(
-    'CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT UNIQUE, password_hash TEXT)'
+async function initDb() {
+  await run(
+    'CREATE TABLE IF NOT EXISTS users (id SERIAL PRIMARY KEY, email TEXT UNIQUE, password_hash TEXT)'
   )
-  db.run(
-    'CREATE TABLE IF NOT EXISTS orders (id INTEGER PRIMARY KEY AUTOINCREMENT, user_id INTEGER, items_json TEXT, total REAL, created_at TEXT, address_json TEXT, payment_method TEXT)'
+  await run(
+    'CREATE TABLE IF NOT EXISTS orders (id SERIAL PRIMARY KEY, user_id INTEGER, items_json TEXT, total REAL, created_at TEXT, address_json TEXT, payment_method TEXT)'
   )
-
-  db.run('ALTER TABLE orders ADD COLUMN address_json TEXT', () => {})
-  db.run('ALTER TABLE orders ADD COLUMN payment_method TEXT', () => {})
-})
+}
 
 function requireAuth(req, res, next) {
   if (!req.session.userId) return res.status(401).json({ error: 'Not logged in' })
@@ -142,6 +132,13 @@ app.post('/api/orders', requireAuth, async (req, res) => {
   }
 })
 
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`)
-})
+initDb()
+  .then(() => {
+    app.listen(PORT, () => {
+      console.log(`Server running on http://localhost:${PORT}`)
+    })
+  })
+  .catch(err => {
+    console.error('Failed to initialize database', err)
+    process.exit(1)
+  })
